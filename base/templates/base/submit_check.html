@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="wrap">
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="subCent">
+            <div class="subLeftBan"></div>
+            <div class="subRightBan"></div>
+        </div>
+        <div class="subCent">
+            {% include 'base/components/sub_sidemenu1.html' %}
+            <div class="subContent">
+                신청내용확인{{f_submit.name}},{{f_submit.phonnumber}}
+            </div>
+            <a href="{% url 'edit-submit-jm' f_submit.id %}">수정하기</a>
+        </div>
+        
+        {% include 'footer.html' %}
+
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="wrap">
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="subCent">
+            <div class="subLeftBan"></div>
+            <div class="subRightBan"></div>
+        </div>
+        <div class="subCent">
+            {% include 'base/components/sub_sidemenu1.html' %}
+            <div class="subContent">
+                <form method="POST" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form1.as_p }}
+                <h3>작명대상자인적사항</h3>
+                <div class="person-form">
+                    {{form2.as_p}}
+                </div>
+
+
+                {% comment %} 작명대상자 추가삭제 관련 코드 modelformset_factory {% endcomment %}
+                {% comment %} {% if formset %}
+                {{formset.management_form}}
+                    <div id="person-form-list">
+                        {% for form in formset %}
+                            <div class="person-form">
+                                {{form.as_p}}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div id="empty-form" class="hidden">{{ formset.empty_form}}</div>
+                    <button id="add-more" type='button'>Add More</button>
+                    <button id="remove" type='button' class="hidden">remove</button>
+                {% else %}
+                    {{ form2.as_p }}
+                {% endif %} {% endcomment %}
+
+                <button type="submit">완료</button>
+                </form>
+            </div>
+        </div>
+        
+        {% include 'footer.html' %}
+
+    </div>
+</div>
+
+<script>
+
+{% comment %} 신청서 추가 삭제 버튼 관련 {% endcomment %}
+
+const addMoreBtn = document.getElementById('add-more')
+const totalNewForms = document.getElementById('id_form-TOTAL_FORMS')
+const startNum = totalNewForms.value
+const removeBtn = document.getElementById('remove')
+addMoreBtn.addEventListener('click', add_new_form)
+removeBtn.addEventListener('click', remove_last_form)
+
+function add_new_form(event) {
+    if (event) {
+        event.preventDefault()
+    }
+    const currentPersonForms = document.getElementsByClassName('person-form')
+    const currentFormCount = currentPersonForms.length
+    const formCopyTarget = document.getElementById('person-form-list')
+    const copyEmptyFormEl = document.getElementById('empty-form').cloneNode(true)
+    copyEmptyFormEl.setAttribute('class','person-form')
+    copyEmptyFormEl.setAttribute('id', `form-${currentFormCount}`)
+    const regex = new RegExp('__prefix__', 'g')
+    copyEmptyFormEl.innerHTML = copyEmptyFormEl.innerHTML.replace(regex,currentFormCount)
+    totalNewForms.setAttribute('value', currentFormCount + 1)
+    formCopyTarget.append(copyEmptyFormEl)
+    const addRemoveBtn = document.querySelector('#remove')
+    addRemoveBtn.setAttribute('class','')
+}
+
+function remove_last_form(event) {
+    if (event) {
+        event.preventDefault()
+    }
+    const selectForms = document.querySelector('.person-form:last-child')
+    selectForms.remove()
+    const currentPersonForms = document.getElementsByClassName('person-form')
+    const currentFormCount = currentPersonForms.length 
+    totalNewForms.setAttribute('value', currentFormCount)
+    console.log(currentFormCount)
+    console.log(startNum)
+    if (currentFormCount == startNum ){
+        const hiddenRemoveBtn = document.querySelector('#remove')
+        hiddenRemoveBtn.setAttribute('class','hidden')
+    }
+}
+
+{% comment %} 신청서 첫번째 delete 버튼 삭제 관련 {% endcomment %}
+
+selectFirstDelete = document.getElementById('id_form-0-DELETE')
+selectHideNode = selectFirstDelete.parentNode.parentNode.lastElementChild
+selectHideNode.setAt
+
+</script>
+
+{% endblock content %}
