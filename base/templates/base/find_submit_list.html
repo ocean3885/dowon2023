@@ -3,24 +3,16 @@
 {% block content %}
 <div class="wrap">
     {% include 'header.html' %}
-
     <div class="container">
         <div class="subCent">
             <div class="subLeftBan"></div>
             <div class="subRightBan"></div>
         </div>
         <div class="subCent">
-            {% include 'base/components/sub_sidemenu1.html' %}
+             {% include 'base/components/sub_sidemenu2.html' %}
             <div class="subContent">
-                수정이 완료되었습니다.
-                {{submit.name}},{{submit.category}}
+                신청서리스트페이지
             </div>
-                {{person.name}}<br>
-                {{person.gen}}<br>
-                {{person.day}}<br>
-                {{person.year}}<br>
-
-            <a href="{% url 'edit-submit-jm' submit.id %}">수정하기</a>
         </div>
         
         {% include 'footer.html' %}

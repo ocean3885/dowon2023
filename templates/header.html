@@ -7,13 +7,13 @@
         </div>
         <div class="nav">
             <ul>                    
-                <a href="{% url "sub-intro" %}"><li>작명원소개</li></a>
-                <a href="{% url "m-home" %}"><li>도원성명학</li></a>
-                <a href="#"><li>도원사주학</li></a>
+                <li><a href="{% url "sub-intro" %}">작명원소개</a></li>
+                <li><a href="{% url "m-home" %}">도원성명학</a></li>
+                <li><a href="#">도원사주학</a></li>
                 <li><a href="{% url "msr-input" %}">작명절차안내</a></li>
                 <li><a href="{% url "submit-jm" %}">작명신청하기</a></li>
-                <li>개명신청하기</li>
-                <li>사주/궁합</li>
+                <li><a href="{% url "submit-gm" %}">개명신청하기</a></li>
+                <li><a href="{% url "submit-sj" %}">사주/궁합</a></li>
             </ul>
         </div>
     </div>
