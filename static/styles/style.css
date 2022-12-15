@@ -424,6 +424,24 @@ body {
     background:url('/static/img/subRightBg.jpg') no-repeat; 
 }
 
+.subRightBan1 {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg1.jpg') no-repeat; 
+}
+
+.subRightBan2 {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg2.jpg') no-repeat; 
+}
+
+.subRightBan3 {
+    width:900px;
+    height:250px;
+    background:url('/static/img/subRightBg3.jpg') no-repeat; 
+}
+
 .subSideMenu {
     width:300px;
     background:url('/static/img/submenubg.jpg'); 

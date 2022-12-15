@@ -42,9 +42,8 @@ body {
 
 .header {
     width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     border-bottom: 3px solid rgb(157, 115, 115);
 }
 
@@ -65,7 +64,7 @@ input[id="menuicon"] {display:none;}
     width: 30px;
     height: 25px;
     cursor:pointer;
-    margin-left:10px;
+    margin-left:5px;
 }
 
 .menubtn span {
@@ -95,6 +94,7 @@ input[id="menuicon"] {display:none;}
 
 .sidebar ul li {
     list-style: none;
+    font-size: 0.9rem;
 }
 
 .sidebar ul a {
@@ -116,15 +116,53 @@ input[id="menuicon"]:checked ~ .menubtn {z-index:3;}
 input[id="menuicon"]:checked ~ .sidebar {opacity:1;height:70vh;max-height:350px;}
 input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity: 0.5;}
 
+
+.logo {
+    justify-self: center;
+}
 .logo a img {
     margin: 5px 0;
     width:110px;
     height: auto;
 }
 
-.hrightbtn {
-    width: 20%;
+.hrightbtn-wrap{
+    /* display: flex; */
+    justify-self: right;
+    align-self: center;
+    margin-right: 4px;
+
 }
+.hrightbtn {
+    font-family: "NotoSansKR-regular";
+    font-size: 0.8rem;
+    border: 1px solid #a08c8c;
+    height:20px;
+    width:78px;
+    border-radius: 5px;
+    padding: 3px 2px;
+    position: relative;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+}
+
+.hrightbtn img{
+    width:13px;
+    height:auto
+}
+
+.hrightbtn div{
+    position: absolute;
+    left: 18px;
+    top: 3px;
+}
+
+.hrightbtn:hover {
+    background-color: beige;
+    cursor: pointer;
+}
+    
 
 .container {
     width: 100%;
@@ -242,10 +280,13 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
 @media (min-width:500px){
     .tabImage img {width:190px;height:190px;}
     .tab {flex-direction: row;}
-    .logo img {width: 140px;}
-    .sidebar {top:60px;}
-    .sideonbg {height:calc(100vh - 60px);top:60px;}
+    .sidebar {top:63px;}
+    .sideonbg {height:calc(100vh - 63px);top:63px;}
     .tab-btn li {font-size: 1rem;}
     .conimg {background:url('/static/img/m-mainbg.jpg') no-repeat;background-size:cover; }
-    .logo a img {width:130px;}
+    .logo a img {width:140px;}
+    .hrightbtn {font-size: 0.9rem;height:20px;width:90px;padding: 3px 6px;}
+    .hrightbtn img{width:15px;}
+    .hrightbtn div{left: 27px;top: 3px;}
 }
+

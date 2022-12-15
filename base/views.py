@@ -9,6 +9,21 @@ def home(request):
 def sub_intro(request):
     return render(request, 'base/sub_intro.html')
 
+def certification(request):
+    return render(request, 'base/certification.html')
+
+def submit_info(request):
+    return render(request, 'base/submit_info.html')
+
+def about_saju(request):
+    return render(request, 'base/about_saju.html')
+
+def about_naming(request):
+    return render(request, 'base/about_naming.html')
+
+def about_jm(request):
+    return render(request, 'base/about_jm.html')
+
 def submit_jm(request):
     if request.method == "POST":
         form1 = JmSubmitForm(request.POST)
