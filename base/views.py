@@ -4,7 +4,11 @@ from .forms import JmSubmitForm, GmSubmitForm, PersonForm, SjSubmitForm, SjPerso
 from .models import Submit, Person
 
 def home(request):
-    return render(request, 'base/home.html')
+    if request.user_agent.is_pc:
+        return render(request, 'base/home.html')
+    else:
+        return render(request, 'mobile/m_home.html')
+
 
 def sub_intro(request):
     return render(request, 'base/sub_intro.html')
