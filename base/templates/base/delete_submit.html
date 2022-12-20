@@ -21,7 +21,7 @@
                             <input type="hidden" name="pk" value="{{ submit.id }}">
                             <button type="submit">네</button>
                         </form>
-                        <a href="{% url 'home' %}"><button type="button">아니오</button></a>
+                        <a href="{{request.META.HTTP_REFERER}}"><button type="button">아니오</button></a>
                     </div>
                 </div>
             </div>
