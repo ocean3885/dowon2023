@@ -24,12 +24,4 @@ horizontalMenus.forEach((menu) =>
   )
 );
 
-// 탭메뉴 관련
-$('.tab-btn li').click(function(){
-  var name = $(this).attr('data-tab');
-  $(this).addClass('active')
-  $(this).siblings('.tab-btn li').removeClass('active')
 
-  $("#"+name).addClass('active').siblings('div').removeClass('active');
-
-})

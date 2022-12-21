@@ -234,7 +234,7 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     font-weight: bold;
 }
 
-.tab-btn li .active {
+.tab-btn li.active {
     font-weight: bold;
     background-color: #ffffff;
 }
@@ -260,7 +260,7 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     max-width: 750px;
 }
 
-.tab-content .active {
+.tab-content div.active {
     opacity: 1;
     visibility: visible;
 }

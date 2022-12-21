@@ -1,9 +1,9 @@
 {% load static %} 
 <ul class="tab-btn">
-    <li class="active" data-tab="tab1">도원 성명학</li>
-    <li data-tab="tab2">도원 사주학</li>
-    <li data-tab="tab3">유명인 사주</li>
-    <li data-tab="tab4">일주론</li>
+    <li class="tabbtn active" data-tab="tab1">도원 성명학</li>
+    <li class="tabbtn" data-tab="tab2">도원 사주학</li>
+    <li class="tabbtn" data-tab="tab3">유명인 사주</li>
+    <li class="tabbtn" data-tab="tab4">일주론</li>
 </ul>
 <div class="tab-content">
     <div id="tab1" class="tab active">
@@ -71,3 +71,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    const tabItem = document.querySelectorAll('.tabbtn')
+    const tabInner = document.querySelectorAll('.tab')
+
+    tabItem.forEach((tab, idx)=> {
+        tab.addEventListener('click', function(){
+            tabInner.forEach((inner)=> {
+                inner.classList.remove('active')
+            })
+
+            tabItem.forEach((item)=> {
+                item.classList.remove('active')
+            })
+
+            tabItem[idx].classList.add('active')
+            tabInner[idx].classList.add('active')
+        })
+    })
+  </script>
