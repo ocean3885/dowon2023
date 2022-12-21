@@ -32,6 +32,7 @@ button {
     border-radius: 5px;
     color:rgb(0, 0, 0);
     background-color: #ececec;
+    font-weight: 400;
 }
 
 html {
@@ -233,7 +234,7 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     font-weight: bold;
 }
 
-.tab-btn li.active {
+.tab-btn li .active {
     font-weight: bold;
     background-color: #ffffff;
 }
@@ -259,7 +260,7 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     max-width: 750px;
 }
 
-.tab-content div.active {
+.tab-content .active {
     opacity: 1;
     visibility: visible;
 }
