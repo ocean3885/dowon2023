@@ -11,7 +11,14 @@
             {% include 'mobile/components/tap_menu.html' %}
         </div>
         <div class="section1">
-            <video src="{% static "video/dowon_intro.mp4" %}" controls autoplay muted loop width="90%"></video>
+            <video id="vid" 
+                width="90%" 
+                autoplay="autoplay" loop="loop" 
+                muted="muted" controls
+                poster="https://www.w3schools.com/images/w3schools_green.jpg">
+                <source src="{% static 'video/dowon_intro.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
     {% include 'mobile/components/footer.html' %}
