@@ -234,54 +234,62 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     box-sizing:border-box;
 }
 
-.tab-btn {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
+.tabs {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
-
-.tab-btn li {
-    background: #e1e1e1;
+  
+/* 탭 스타일 */
+.tab_item {
+    width: calc(100%/4);
+    height: 35px;
+    border: 1px solid #aeaeae;
+    box-sizing:border-box;
+    background-color: #f8f8f8;
     font-size: 0.9rem;
-    color: rgb(48, 48, 48);
-    flex: auto;
+    color: #333333;
+    display: block;
+    float: left;
     text-align: center;
-    padding: 5px 0px;
-    transition: 0.5s;
-    cursor: pointer;
+    padding-top : 5px;
+    transition: all 0.2s ease;
 }
-
-.tab-btn li:hover {
+.tab_item:hover {
+    opacity: 0.75;
     font-weight: bold;
 }
 
-.tab-btn li.active {
-    font-weight: bold;
-    background-color: #ffffff;
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+    display: none;
 }
 
-.tab-content {
-    position: relative;
-}
-
-.tab {
-    position: absolute;
+/* 탭 컨텐츠 스타일 */
+.tab_content {
     display: none;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
     width: 100%;
-    left:50%; transform:translateX(-50%);
-    top: 0;
     box-sizing:border-box;
     padding: 10px 10px;
     max-width: 750px;
+    margin:0 auto;
 }
 
-.tab-content div.active {
+
+/* 선택 된 탭 콘텐츠를 표시 */
+#tab1:checked ~ #tab1_content,
+#tab2:checked ~ #tab2_content,
+#tab3:checked ~ #tab3_content,
+#tab4:checked ~ #tab4_content {
     display: flex;
+}
+
+/* 선택된 탭 스타일 */
+.tabs input:checked + .tab_item {
+    background-color: #333333;
+    color: #fff;
 }
 
 .tabText {
@@ -307,6 +315,7 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
 }
 
 .tabImage img {
+    margin: 10px 0;
     width:230px;
     height:200px;
     box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.75);
@@ -344,7 +353,6 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
 .submitForm-wrap .form-box .requester-form-wrap{
     margin:0 auto;
     max-width: 610px;
-
 }
 
 .submitForm-wrap .form-box .title {
@@ -353,6 +361,7 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     flex-wrap: wrap;
     margin-top: 10px;
 }
+
 .submitForm-wrap .form-box .title h3 {
     font-size: 1rem;
     padding:0;
@@ -410,7 +419,6 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
     transition: all 0.3s ease;
     font-size: 0.95rem;
     font-family: "NotoSansKR-light";
-
 }
 
 .submitForm-wrap .form-box .form-content p textarea {
@@ -821,10 +829,9 @@ input[id="menuicon"]:checked ~ .sideonbg {z-index:1;visibility: visible;opacity:
 @media (min-width:500px){
     html {font-size: 16px;}
     .tabImage img {width:190px;height:190px;}
-    .tab {flex-direction: row;}
+    .tab_content {flex-direction: row;}
     .sidebar {top:63px;}
     .sideonbg {height:calc(100vh - 63px);top:63px;}
-    .tab-btn li {font-size: 1rem;}
     .conimg {background:url('/static/img/m-mainbg.jpg') no-repeat;background-size:cover; }
     .logo a img {width:140px;}
     .hrightbtn {font-size: 0.9rem;height:20px;width:90px;padding: 3px 6px;}

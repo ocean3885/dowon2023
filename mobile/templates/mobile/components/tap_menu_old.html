@@ -1,14 +1,12 @@
-{% load static %}
-<div class="tabs">
-    <input id="tab1" type="radio" name="tab_item" checked>
-    <label class="tab_item" for="tab1">도원 성명학</label>
-    <input id="tab2" type="radio" name="tab_item">
-    <label class="tab_item" for="tab2">도원 사주학</label>
-    <input id="tab3" type="radio" name="tab_item">
-    <label class="tab_item" for="tab3">유명인 사주</label>
-    <input id="tab4" type="radio" name="tab_item">
-    <label class="tab_item" for="tab4">일주론</label>
-    <div class="tab_content" id="tab1_content">
+{% load static %} 
+<ul class="tab-btn">
+    <li class="tabbtn active" data-tab="tab1">도원 성명학</li>
+    <li class="tabbtn" data-tab="tab2">도원 사주학</li>
+    <li class="tabbtn" data-tab="tab3">유명인 사주</li>
+    <li class="tabbtn" data-tab="tab4">일주론</li>
+</ul>
+<div class="tab-content">
+    <div id="tab1" class="tab active">
         <div class="tabImage">
             <img aria-label="tapImg1" src="{% static 'img/tapImg.jpg' %}">
         </div>
@@ -24,7 +22,7 @@
             </a>
         </div>
     </div>
-    <div class="tab_content" id="tab2_content">
+    <div id="tab2" class="tab">
         <div class="tabImage">
             <img aria-label="tapImg1" src="{% static 'img/tapImg1.jpg' %}">
         </div>
@@ -40,7 +38,7 @@
             </a>
         </div>
     </div>
-    <div class="tab_content" id="tab3_content">
+    <div id="tab3" class="tab">
         <div class="tabImage">
             <img aria-label="tapImg1" src="{% static 'img/tapImg2.jpg' %}">
         </div>
@@ -56,7 +54,7 @@
             </a>
         </div>
     </div>
-    <div class="tab_content" id="tab4_content">
+    <div id="tab4" class="tab">
         <div class="tabImage">
             <img aria-label="tapImg1" src="{% static 'img/tapImg3.jpg' %}">
         </div>
@@ -72,8 +70,24 @@
             </a>
         </div>
     </div>
+</div>
 
+<script>
+    const tabItem = document.querySelectorAll('.tabbtn')
+    const tabInner = document.querySelectorAll('.tab')
 
-<style>
-    
-</style>
+    tabItem.forEach((tab, idx)=> {
+        tab.addEventListener('click', function(){
+            tabInner.forEach((inner)=> {
+                inner.classList.remove('active')
+            })
+
+            tabItem.forEach((item)=> {
+                item.classList.remove('active')
+            })
+
+            tabItem[idx].classList.add('active')
+            tabInner[idx].classList.add('active')
+        })
+    })
+  </script>
