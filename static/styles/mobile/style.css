@@ -2,6 +2,11 @@
     font-family: 'NotoSerifKR-Regular';
     src: url('/static/fonts/Noto_Serif_KR/NotoSerifKR-Regular.otf') format('truetype');
 }
+
+@font-face {
+    font-family: 'NotoSerifKR-Medium';
+    src: url('/static/fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf') format('truetype');
+}
 @font-face {
     font-family: 'MapoAgape';
     src: url('/static/fonts/MapoAgape.ttf') format('truetype');
@@ -98,9 +103,10 @@ body {
 
 .menu-button-container {
     display: flex;
-    margin-left:10px;
+    /* margin-left:10px; */
     height: 100%;
     width: 30px;
+    padding: 0 20px 0 10px;
     cursor: pointer;
     flex-direction: column;
     justify-content: center;
@@ -156,9 +162,9 @@ body {
     display: flex;justify-content: right;
     overflow: hidden;}
 
-.sideonbg {position:absolute;width:100%;max-width:960px;height:calc(100vh - 53px);visibility: hidden;
+.sideonbg {position:absolute;width:100%;max-width:960px;height:100%;visibility: hidden;
     background-color: rgb(143, 143, 143);top:53px;opacity:0;transition: 0.5s;}
-
+    
 .sidebar ul {
     margin:0;
     padding:0;
@@ -538,6 +544,7 @@ input[name="tab_item"] {
 
 .submit-check-wrap{
     margin: 0 auto;
+    margin-bottom: 60px;
     width:95%;
 }
 
@@ -633,6 +640,7 @@ input[name="tab_item"] {
 }
 .find-form form {
     margin-top:30px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -809,6 +817,7 @@ input[name="tab_item"] {
 }
 
 .subcontext p{
+    font-family: 'NotoSerifKR-Medium';
     line-height: 180%;
     font-size: 1rem;
 }
