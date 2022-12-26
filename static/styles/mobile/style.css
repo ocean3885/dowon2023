@@ -1,17 +1,4 @@
 @font-face {
-    font-family: 'NotoSerifKR-Regular';
-    src: url('/static/fonts/Noto_Serif_KR/NotoSerifKR-Regular.otf') format('truetype');
-}
-
-@font-face {
-    font-family: 'NotoSerifKR-Medium';
-    src: url('/static/fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf') format('truetype');
-}
-@font-face {
-    font-family: 'MapoAgape';
-    src: url('/static/fonts/MapoAgape.ttf') format('truetype');
-}
-@font-face {
     font-family: 'NotoSansKR-regular';
     src: url('/static/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf') format('truetype');
 }
@@ -806,6 +793,12 @@ input[name="tab_item"] {
 
 /* ----------- sub intro page start  ---------- */
 
+
+.con-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .subContent img {
     margin-left:10px;
     width:60%;
@@ -817,7 +810,6 @@ input[name="tab_item"] {
 }
 
 .subcontext p{
-    font-family: 'NotoSerifKR-Medium';
     line-height: 180%;
     font-size: 1rem;
 }
